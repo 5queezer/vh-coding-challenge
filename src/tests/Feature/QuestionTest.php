@@ -20,4 +20,17 @@ class QuestionTest extends TestCase
         $response->assertOk();
         $this->assertCount(1, Question::all());
     }
+
+    /** validation test */
+    public function test_question_is_required() 
+    {
+        $this->withExceptionHandling();
+
+        $response = $this->post('/questions', [
+            'title' => ''
+        ]);
+
+        $response->assertSessionHasErrors('title');
+    }
+
 }

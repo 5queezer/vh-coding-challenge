@@ -33,4 +33,16 @@ class QuestionTest extends TestCase
         $response->assertSessionHasErrors('title');
     }
 
+    /** validation test */
+    public function test_question_has_min_length() 
+    {
+        $this->withExceptionHandling();
+
+        $response = $this->post('/questions', [
+            'title' => 'abcd'
+        ]);
+
+        $response->assertSessionHasErrors('title');
+    }
+
 }

@@ -42,6 +42,7 @@ services:
       - ./src:/var/www/html
     networks:
       - laravel
+    user: "1000:1001"
 
   composer:
     image: composer:latest

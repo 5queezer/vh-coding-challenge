@@ -9,7 +9,7 @@ class QuestionsController extends Controller
 {
     public function store() {
         $data = request()->validate([
-            'title' => 'required|min:5'
+            'title' => array('required', 'min:5', 'regex:/\?$/u')
         ]);
         Question::create([
             'title' => request('title')

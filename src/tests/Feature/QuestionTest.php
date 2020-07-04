@@ -45,4 +45,16 @@ class QuestionTest extends TestCase
         $response->assertSessionHasErrors('title');
     }
 
+    /** validation test */
+    public function test_question_ends_with_question_mark() 
+    {
+        $this->withExceptionHandling();
+
+        $response = $this->post('/questions', [
+            'title' => 'No question mark'
+        ]);
+
+        $response->assertSessionHasErrors('title');
+    }
+
 }

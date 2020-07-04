@@ -2,12 +2,15 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Question;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class QuestionTest extends TestCase
 {
-    public function test_a_question_can_be_added()
+    use RefreshDatabase;
+    /** add a question */
+    public function test_question_can_be_added()
     {
         $this->withExceptionHandling();
         $response = $this->post('/questions', [
@@ -15,6 +18,6 @@ class QuestionTest extends TestCase
         ]);
 
         $response->assertOk();
-        
+        $this->assertCount(1, Question::all());
     }
 }

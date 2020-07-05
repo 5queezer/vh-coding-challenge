@@ -7,9 +7,10 @@ A coding challenge for [veganhacktivists.org](https://veganhacktivists.org). Bas
 To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then clone this repository.
 
 - First edit your `src/.env` file after copying the `src/.env.example` file. 
-- Run `bin/composer install` to install the composer packages.
 - Build the Docker image with `docker-compose build`
+- Run `bin/composer install` to install the composer packages.
 - Run `bin/artisan migrate` to install the databases.
+- Run `bin/artisan key:generate` to install the databases.
 - Then run `docker-compose up -d` to spin up the project.
 
 Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended.

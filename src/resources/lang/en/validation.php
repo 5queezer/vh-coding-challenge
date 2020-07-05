@@ -131,7 +131,7 @@ return [
 
     'custom' => [
         'title' => [
-            'regex' => 'The title must end with a question mark.',
+            'regex' => 'The :attribute must end with a question mark.',
         ],
     ],
 

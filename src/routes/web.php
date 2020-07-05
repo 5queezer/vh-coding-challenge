@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::post('/questions', 'QuestionsController@store');
+Route::post('/questions/{question}/answers', 'AnswersController@store');

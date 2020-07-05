@@ -3,7 +3,12 @@
 @section('content')
 
 @error('title')
-    <div class="alert alert-danger">{{ $message }}</div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ $message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 @enderror
 {{ Form::open(array('url' => 'questions', 'method' => 'POST')) }}
     <div class="form-group">
@@ -16,6 +21,7 @@
         {{ Form::submit('Ask me everything', ['class' => 'btn btn-primary']) }}
     </div>
 {{ Form::close() }}
+
 @if ($questions->count() > 0)
     <hr />
     <h2 class="mb-3 p-3 bg-primary text-white">Questions ({{ $questions->count() }})</h2>

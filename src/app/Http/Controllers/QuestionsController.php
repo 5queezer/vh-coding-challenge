@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class QuestionsController extends Controller
 {
-    public function store(Request $request) {
-        $request->validateWithBag('question', [
+    public function store() {
+        request()->validate([
             'title' => array('required', 'min:5', 'regex:/\?$/u')
         ]);
         Question::create([

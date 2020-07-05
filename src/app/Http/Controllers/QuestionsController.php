@@ -16,7 +16,7 @@ class QuestionsController extends Controller
         Question::create([
             'title' => request('title')
         ]);
-        return redirect('/');
+        return redirect()->back();
     }
 
     /**

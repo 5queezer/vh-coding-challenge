@@ -16,6 +16,6 @@ class AnswersController extends Controller
             'title' => request('title'),
             'question_id' => (int) $question_id
         ]);
-        return redirect("/questions/{$question_id}/answers");
+        return redirect()->back();
     }
 }

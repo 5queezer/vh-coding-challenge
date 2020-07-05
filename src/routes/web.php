@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/questions', function () {
+  return redirect('/');
+});
 Route::post('/questions', 'QuestionsController@store');
+Route::get('/questions/{question}', function ($id) {
+  return redirect("/questions/{$id}/answers");
+});
 Route::get('/questions/{question}/answers', 'QuestionsController@show');
 Route::post('/questions/{question}/answers', 'AnswersController@store');

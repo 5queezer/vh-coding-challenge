@@ -8,6 +8,7 @@ To get started, make sure you have [Docker installed](https://docs.docker.com/do
 
 - First edit your `src/.env` file after copying the `src/.env.example` file. 
 - Run `bin/composer install` to install the composer packages.
+- Build the Docker image with `docker-compose build`
 - Run `bin/artisan migrate` to install the databases.
 - Then run `docker-compose up -d --build` to spin up the project.
 

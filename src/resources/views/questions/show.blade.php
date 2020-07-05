@@ -5,7 +5,7 @@
   {{ $question->title }}
 </h2>
 <div class="list-group">
-  @forelse($question->answers as $answer)
+  @forelse($answers as $answer)
     <div class="list-group-item">
         {{ $answer->title }}
     </div>

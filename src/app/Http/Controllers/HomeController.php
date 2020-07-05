@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::orderBy('created_at', 'desc')->get();
         $placeholder_questions = Arr::shuffle([
             "Where do you get protein?",
             "Do you miss the taste of meat?",

@@ -28,6 +28,7 @@ class QuestionsController extends Controller
     public function show($id)
     {
       $question = Question::find($id);
-      return view('questions.show')->with(['question' => $question]);
+      $answers = $question->answers->sortBy('created_at');
+      return view('questions.show')->with(['question' => $question, 'answers' => $answers]);
     }
 }

@@ -26,10 +26,10 @@ class AnswersTest extends TestCase
     {
         $this->withExceptionHandling();
         $response = $this->post("/questions/{$this->id}/answers", [
-            'title' => 'Red pill',
+            'title' => 'Red pill'
         ]);
 
-        $response->assertOk();
+        $response->assertStatus(302);
         $this->assertCount(1, Answer::all());
     }
 

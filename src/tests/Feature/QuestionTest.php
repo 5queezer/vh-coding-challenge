@@ -17,7 +17,7 @@ class QuestionTest extends TestCase
             'title' => 'Why are women so complicated?'
         ]);
 
-        $response->assertOk();
+        $response->assertStatus(302);
         $this->assertCount(1, Question::all());
     }
 

@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'HomeController@index');
 Route::post('/questions', 'QuestionsController@store');
+Route::get('/questions/{question}/answers', 'QuestionsController@show');
 Route::post('/questions/{question}/answers', 'AnswersController@store');

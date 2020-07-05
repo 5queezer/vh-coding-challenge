@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class QuestionsController extends Controller
 {
-    public function store() {
-        $data = request()->validate([
+    public function store(Request $request) {
+        $request->validateWithBag('question', [
             'title' => array('required', 'min:5', 'regex:/\?$/u')
         ]);
         Question::create([
             'title' => request('title')
         ]);
+        return redirect('/');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+      $question = Question::find($id);
+      return view('questions.show')->with(['question' => $question]);
     }
 }

@@ -13,6 +13,10 @@ To get started, make sure you have [Docker installed](https://docs.docker.com/do
 
 Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended.
 
+## Tests
+
+Run `bin/artisan test` to run the tests.
+
 ## Persistent MySQL Storage
 
 By default, whenever you bring down the docker-compose network, your MySQL data will be removed after the containers are destroyed. If you would like to have persistent data that remains after bringing containers down and back up, do the following:

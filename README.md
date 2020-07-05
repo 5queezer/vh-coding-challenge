@@ -10,7 +10,7 @@ To get started, make sure you have [Docker installed](https://docs.docker.com/do
 - Run `bin/composer install` to install the composer packages.
 - Build the Docker image with `docker-compose build`
 - Run `bin/artisan migrate` to install the databases.
-- Then run `docker-compose up -d --build` to spin up the project.
+- Then run `docker-compose up -d` to spin up the project.
 
 Open up your browser of choice to [http://localhost:8080](http://localhost:8080) and you should see your Laravel app running as intended.
 
